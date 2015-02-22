@@ -1,0 +1,23 @@
+﻿//Project by BaussHacker aka. L33TS
+
+using System;
+
+namespace ProjectX_V3_Game.Packets.GeneralData
+{
+	/// <summary>
+	/// Subtype: 408
+	/// </summary>
+	public class QueryStatInfo
+	{
+		/// <summary>
+		/// Handling the QueryStatInfo action from GeneralDataPacket.
+		/// </summary>
+		/// <param name="client">The client.</param>
+		/// <param name="General">The GeneralDataPacket.</param>
+		public static void Handle(Entities.GameClient client, GeneralDataPacket General)
+		{
+			client.BaseEntity.CalculateBaseStats(); // just in case ...
+			client.Send(client.CreateStatsPacket());
+		}
+	}
+}

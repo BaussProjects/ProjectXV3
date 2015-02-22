@@ -1,0 +1,431 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{1CC03FC0-24E4-464F-A0EB-B303AA44CD8C}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ProjectX_V3_Game</RootNamespace>
+    <AssemblyName>ProjectX_V3_Game</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE;TOURNAMENTS;SPAWN_MOBS;NORMAL_GEM_STATS;SPAWN_BOTS</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+    <StartAction>Project</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DMapLoader">
+      <HintPath>bin\Debug\DMapLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Calculations\BasicCalculations.cs" />
+    <Compile Include="Calculations\Battle.cs" />
+    <Compile Include="Calculations\LineSector.cs" />
+    <Compile Include="Core\BitExchange.cs" />
+    <Compile Include="Core\Kernel.cs" />
+    <Compile Include="Core\LoginHandler.cs" />
+    <Compile Include="Core\MessageConst.cs" />
+    <Compile Include="Core\NameGenerator.cs" />
+    <Compile Include="Core\NumericConst.cs" />
+    <Compile Include="Core\PortalPoint.cs" />
+    <Compile Include="Core\Screen.cs" />
+    <Compile Include="Core\SystemVariables.cs" />
+    <Compile Include="Core\TimeIntervals.cs" />
+    <Compile Include="Core\UIDGenerators.cs" />
+    <Compile Include="Database\ArenaDatabase.cs" />
+    <Compile Include="Database\AvatarDatabase.cs" />
+    <Compile Include="Database\BotDatabase.cs" />
+    <Compile Include="Database\CharacterDatabase.cs" />
+    <Compile Include="Database\DropDatabase.cs" />
+    <Compile Include="Database\GuildDatabase.cs" />
+    <Compile Include="Database\ItemDatabase.cs" />
+    <Compile Include="Database\MapDatabase.cs" />
+    <Compile Include="Database\MonsterDatabase.cs" />
+    <Compile Include="Database\NobilityDatabase.cs" />
+    <Compile Include="Database\NPCDatabase.cs" />
+    <Compile Include="Database\PortalDatabase.cs" />
+    <Compile Include="Database\ReviveDatabase.cs" />
+    <Compile Include="Database\ScriptDatabase.cs" />
+    <Compile Include="Database\ServerDatabase.cs" />
+    <Compile Include="Database\ShopDatabase.cs" />
+    <Compile Include="Database\SpellDatabase.cs" />
+    <Compile Include="Database\StatsDatabase.cs" />
+    <Compile Include="Database\SystemDatabase.cs" />
+    <Compile Include="Data\Arena\ArenaInfo.cs" />
+    <Compile Include="Data\Arena\ArenaMatch.cs" />
+    <Compile Include="Data\Arena\ArenaQualifier.cs" />
+    <Compile Include="Data\Arena\PetBattle.cs" />
+    <Compile Include="Data\Guilds\Guild.cs" />
+    <Compile Include="Data\Guilds\GuildMember.cs" />
+    <Compile Include="Data\Items\Equipments.cs" />
+    <Compile Include="Data\Items\GroundItem.cs" />
+    <Compile Include="Data\Items\Inventory.cs" />
+    <Compile Include="Data\Items\ItemAddition.cs" />
+    <Compile Include="Data\Items\ItemInfo.cs" />
+    <Compile Include="Data\Items\Warehouse.cs" />
+    <Compile Include="Data\Misc\BattleClass.cs" />
+    <Compile Include="Data\Misc\DropData.cs" />
+    <Compile Include="Data\Misc\Portal.cs" />
+    <Compile Include="Data\Misc\Shop.cs" />
+    <Compile Include="Data\Misc\TradeData.cs" />
+    <Compile Include="Data\Misc\Travel.cs" />
+    <Compile Include="Data\Nobility\NobilityBoard.cs" />
+    <Compile Include="Data\Nobility\NobilityDonation.cs" />
+    <Compile Include="Data\Shop\Booth.cs" />
+    <Compile Include="Data\Shop\BoothItem.cs" />
+    <Compile Include="Data\Skills\AdvancedSkill.cs" />
+    <Compile Include="Data\Skills\AdvancedSkills\BansheeRage.cs" />
+    <Compile Include="Data\Skills\AdvancedSkills\BansheeSummon.cs" />
+    <Compile Include="Data\Skills\AdvancedSkills\SnowQuake.cs" />
+    <Compile Include="Data\Skills\AdvancedSkills\IceBerg.cs" />
+    <Compile Include="Data\Skills\BattleMonsterSkill.cs" />
+    <Compile Include="Data\Skills\MapSkill.cs" />
+    <Compile Include="Data\Skills\Spell.cs" />
+    <Compile Include="Data\Skills\SpellData.cs" />
+    <Compile Include="Data\Skills\SpellInfo.cs" />
+    <Compile Include="Data\Team\Team.cs" />
+    <Compile Include="Entities\AdvancedAI\SoulWarsAI.cs" />
+    <Compile Include="Entities\AIBot.cs" />
+    <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\BattlePet.cs" />
+    <Compile Include="Entities\BossCreature.cs" />
+    <Compile Include="Entities\Bosses\FrozenLieutenant.cs" />
+    <Compile Include="Entities\Bosses\FrozenTwin.cs" />
+    <Compile Include="Entities\Bosses\SnowBanshee.cs" />
+    <Compile Include="Entities\BossMonster.cs" />
+    <Compile Include="Entities\Creatures\IceElf.cs" />
+    <Compile Include="Entities\GameClient.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Entities\IEntity.cs" />
+    <Compile Include="Entities\Monster.cs" />
+    <Compile Include="Entities\NPC.cs" />
+    <Compile Include="Entities\Sob.cs" />
+    <Compile Include="Entities\SubClass.cs" />
+    <Compile Include="Entities\SubClasses.cs" />
+    <Compile Include="Entities\Trainer.cs" />
+    <Compile Include="Enums\ActionType.cs" />
+    <Compile Include="Enums\ArenaStatus.cs" />
+    <Compile Include="Enums\BotLevel.cs" />
+    <Compile Include="Enums\BotType.cs" />
+    <Compile Include="Enums\ChatType.cs" />
+    <Compile Include="Enums\Class.cs" />
+    <Compile Include="Enums\CompositionType.cs" />
+    <Compile Include="Enums\ConquerAngle.cs" />
+    <Compile Include="Enums\DataAction.cs" />
+    <Compile Include="Enums\DropItemType.cs" />
+    <Compile Include="Enums\Effect1.cs" />
+    <Compile Include="Enums\Effect2.cs" />
+    <Compile Include="Enums\Faction.cs" />
+    <Compile Include="Enums\Gems.cs" />
+    <Compile Include="Enums\GuildAction.cs" />
+    <Compile Include="Enums\GuildDonationFlags.cs" />
+    <Compile Include="Enums\GuildRank.cs" />
+    <Compile Include="Enums\InteractAction.cs" />
+    <Compile Include="Enums\ItemAction.cs" />
+    <Compile Include="Enums\ItemColor.cs" />
+    <Compile Include="Enums\ItemLocation.cs" />
+    <Compile Include="Enums\ItemType.cs" />
+    <Compile Include="Enums\MapType.cs" />
+    <Compile Include="Enums\MapTypeFlags.cs" />
+    <Compile Include="Enums\MonsterBehaviour.cs" />
+    <Compile Include="Enums\NobilityAction.cs" />
+    <Compile Include="Enums\NobilityRank.cs" />
+    <Compile Include="Enums\NPCDialogAction.cs" />
+    <Compile Include="Enums\NPCType.cs" />
+    <Compile Include="Enums\PetState.cs" />
+    <Compile Include="Enums\PetType.cs" />
+    <Compile Include="Enums\PKMode.cs" />
+    <Compile Include="Enums\PlayerPermission.cs" />
+    <Compile Include="Enums\PlayerTitle.cs" />
+    <Compile Include="Enums\Sex.cs" />
+    <Compile Include="Enums\ShopType.cs" />
+    <Compile Include="Enums\StringAction.cs" />
+    <Compile Include="Enums\SubClasses.cs" />
+    <Compile Include="Enums\SubClassActions.cs" />
+    <Compile Include="Enums\SynchroType.cs" />
+    <Compile Include="Enums\TeamAction.cs" />
+    <Compile Include="Enums\TimeType.cs" />
+    <Compile Include="Enums\TradeType.cs" />
+    <Compile Include="Enums\UpdateType.cs" />
+    <Compile Include="Enums\WalkMode.cs" />
+    <Compile Include="Enums\WarehouseAction.cs" />
+    <Compile Include="Enums\Weather.cs" />
+    <Compile Include="Enums\WeatherAppearance.cs" />
+    <Compile Include="Enums\WeatherIntensity.cs" />
+    <Compile Include="Maps\DMapHandler.cs" />
+    <Compile Include="Maps\DynamicMap.cs" />
+    <Compile Include="Maps\IMapObject.cs" />
+    <Compile Include="Maps\Map.cs" />
+    <Compile Include="Maps\MapPoint.cs" />
+    <Compile Include="Maps\MapTools.cs" />
+    <Compile Include="Calculations\LevelCalculations.cs" />
+    <Compile Include="Network\Connection.cs" />
+    <Compile Include="Network\Disconnection.cs" />
+    <Compile Include="Network\GameAuth.cs" />
+    <Compile Include="Network\Receive.cs" />
+    <Compile Include="Packets\Arena\ArenaActionPacket.cs" />
+    <Compile Include="Packets\Arena\ArenaBattleInfoPacket.cs" />
+    <Compile Include="Packets\Arena\ArenaMatchPacket.cs" />
+    <Compile Include="Packets\Arena\ArenaPlayersPacket.cs" />
+    <Compile Include="Packets\Arena\ArenaStatisticPacket.cs" />
+    <Compile Include="Packets\Arena\ArenaWatchPacket.cs" />
+    <Compile Include="Packets\GeneralData\ChangeAction.cs" />
+    <Compile Include="Packets\GeneralData\ChangeDirection.cs" />
+    <Compile Include="Packets\GeneralData\ChangeMap.cs" />
+    <Compile Include="Packets\GeneralData\CreateBooth.cs" />
+    <Compile Include="Packets\GeneralData\EndFly.cs" />
+    <Compile Include="Packets\GeneralData\EnterMap.cs" />
+    <Compile Include="Packets\GeneralData\GeneralDataPacket.cs" />
+    <Compile Include="Packets\GeneralData\GetAssociation.cs" />
+    <Compile Include="Packets\GeneralData\GetItemSet.cs" />
+    <Compile Include="Packets\GeneralData\GetMagicSet.cs" />
+    <Compile Include="Packets\GeneralData\GetSurroundings.cs" />
+    <Compile Include="Packets\GeneralData\GetSynAttr.cs" />
+    <Compile Include="Packets\GeneralData\GetWeaponSkillSet.cs" />
+    <Compile Include="Packets\GeneralData\Jump.cs" />
+    <Compile Include="Packets\GeneralData\QueryPlayer.cs" />
+    <Compile Include="Packets\GeneralData\QueryStatInfo.cs" />
+    <Compile Include="Packets\GeneralData\QueryTeamMember.cs" />
+    <Compile Include="Packets\GeneralData\Revive.cs" />
+    <Compile Include="Packets\GeneralData\SetPkMode.cs" />
+    <Compile Include="Packets\GeneralData\ViewEquipment.cs" />
+    <Compile Include="Packets\Guild\ApplyJoin.cs" />
+    <Compile Include="Packets\Guild\ClearAlly.cs" />
+    <Compile Include="Packets\Guild\ClearEnemy.cs" />
+    <Compile Include="Packets\Guild\DischargeMember.cs" />
+    <Compile Include="Packets\Guild\DonateEMoney.cs" />
+    <Compile Include="Packets\Guild\DonateMoney.cs" />
+    <Compile Include="Packets\Guild\GuildAttributePacket.cs" />
+    <Compile Include="Packets\Guild\GuildDonationPacket.cs" />
+    <Compile Include="Packets\Guild\GuildMemberListPacket.cs" />
+    <Compile Include="Packets\Guild\GuildPacket.cs" />
+    <Compile Include="Packets\Guild\InviteJoin.cs" />
+    <Compile Include="Packets\Guild\LeaveSyndicate.cs" />
+    <Compile Include="Packets\Guild\PromoteInfo.cs" />
+    <Compile Include="Packets\Guild\PromoteMember.cs" />
+    <Compile Include="Packets\Guild\QuerySyndicateAttribute.cs" />
+    <Compile Include="Packets\Guild\QuerySyndicateName.cs" />
+    <Compile Include="Packets\Guild\SetAlly.cs" />
+    <Compile Include="Packets\Guild\SetAnnounce.cs" />
+    <Compile Include="Packets\Guild\SetEnemy.cs" />
+    <Compile Include="Packets\Guild\SetRequirement.cs" />
+    <Compile Include="Packets\Guild\Unknown23.cs" />
+    <Compile Include="Packets\Interaction\Battle\Combat.cs" />
+    <Compile Include="Packets\Interaction\Battle\Magic.cs" />
+    <Compile Include="Packets\Interaction\Battle\Physical.cs" />
+    <Compile Include="Packets\Interaction\Battle\Ranged.cs" />
+    <Compile Include="Packets\Interaction\Battle\Skills\ArcherSkills.cs" />
+    <Compile Include="Packets\Interaction\Battle\Skills\BuffSkills.cs" />
+    <Compile Include="Packets\Interaction\Battle\Skills\CircleSkills.cs" />
+    <Compile Include="Packets\Interaction\Battle\Skills\CureSkills.cs" />
+    <Compile Include="Packets\Interaction\Battle\Skills\FlySkill.cs" />
+    <Compile Include="Packets\Interaction\Battle\Skills\LineSkills.cs" />
+    <Compile Include="Packets\Interaction\Battle\Skills\MountSkill.cs" />
+    <Compile Include="Packets\Interaction\Battle\Skills\NinjaSkills.cs" />
+    <Compile Include="Packets\Interaction\Battle\Skills\ReviveSkills.cs" />
+    <Compile Include="Packets\Interaction\Battle\Skills\ScatterSkill.cs" />
+    <Compile Include="Packets\Interaction\Battle\Skills\SectoreSkills.cs" />
+    <Compile Include="Packets\Interaction\Battle\Skills\Single.cs" />
+    <Compile Include="Packets\Interaction\InteractionPacket.cs" />
+    <Compile Include="Packets\Interaction\Misc\Court.cs" />
+    <Compile Include="Packets\Interaction\Misc\Marry.cs" />
+    <Compile Include="Packets\Item\ActivateAccessory.cs" />
+    <Compile Include="Packets\Item\Bless.cs" />
+    <Compile Include="Packets\Item\BoothAdd.cs" />
+    <Compile Include="Packets\Item\BoothAddCP.cs" />
+    <Compile Include="Packets\Item\BoothBuy.cs" />
+    <Compile Include="Packets\Item\BoothDelete.cs" />
+    <Compile Include="Packets\Item\BoothQuery.cs" />
+    <Compile Include="Packets\Item\Buy.cs" />
+    <Compile Include="Packets\Item\CompositionPacket.cs" />
+    <Compile Include="Packets\Item\DrawMoney.cs" />
+    <Compile Include="Packets\Item\Drop.cs" />
+    <Compile Include="Packets\Item\GemSocketingPacket.cs" />
+    <Compile Include="Packets\Item\GroundItemPacket.cs" />
+    <Compile Include="Packets\Item\Improve.cs" />
+    <Compile Include="Packets\Item\ItemInfoPacket.cs" />
+    <Compile Include="Packets\Item\ItemPacket.cs" />
+    <Compile Include="Packets\Item\Ping.cs" />
+    <Compile Include="Packets\Item\QueryMoneySaved.cs" />
+    <Compile Include="Packets\Item\SaveMoney.cs" />
+    <Compile Include="Packets\Item\Sell.cs" />
+    <Compile Include="Packets\Item\Unequip.cs" />
+    <Compile Include="Packets\Item\Uplev.cs" />
+    <Compile Include="Packets\Item\Use.cs" />
+    <Compile Include="Packets\Item\ViewItemPacket.cs" />
+    <Compile Include="Packets\Item\WarehousePacket.cs" />
+    <Compile Include="Packets\Location\MapEffectPacket.cs" />
+    <Compile Include="Packets\Location\MapInfoPacket.cs" />
+    <Compile Include="Packets\Location\MovementPacket.cs" />
+    <Compile Include="Packets\Location\SobSpawnPacket.cs" />
+    <Compile Include="Packets\Location\SpawnPacket.cs" />
+    <Compile Include="Packets\Location\SteedVigorPacket.cs" />
+    <Compile Include="Packets\Location\WeatherPacket.cs" />
+    <Compile Include="Packets\Login\AuthMessagePacket.cs" />
+    <Compile Include="Packets\Login\CharacterCreationPacket.cs" />
+    <Compile Include="Packets\Login\CharacterInfoPacket.cs" />
+    <Compile Include="Packets\Login\UnknownPacket_2078.cs" />
+    <Compile Include="Packets\Login\UnknownPacket_2079.cs" />
+    <Compile Include="Packets\Message\BroadcastPacket.cs" />
+    <Compile Include="Packets\Message\Commands.cs" />
+    <Compile Include="Packets\Message\MessageCore.cs" />
+    <Compile Include="Packets\Message\MessagePacket.cs" />
+    <Compile Include="Packets\Misc\CharacterStatsPacket.cs" />
+    <Compile Include="Packets\Misc\DatePacket.cs" />
+    <Compile Include="Packets\Misc\UpdatePacket.cs" />
+    <Compile Include="Packets\Nobility\NobilityInfoString.cs" />
+    <Compile Include="Packets\Nobility\NobilityPacket.cs" />
+    <Compile Include="Packets\NPC\BattlePetsNPCHandler.cs" />
+    <Compile Include="Packets\NPC\NPCHandler.cs" />
+    <Compile Include="Packets\NPC\NPCRequestPacket.cs" />
+    <Compile Include="Packets\NPC\NPCResponsePacket.cs" />
+    <Compile Include="Packets\NPC\SpawnNPCPacket.cs" />
+    <Compile Include="Packets\Spells\SendProfPacket.cs" />
+    <Compile Include="Packets\Spells\SendSpellPacket.cs" />
+    <Compile Include="Packets\Spells\UseSpellPacket.cs" />
+    <Compile Include="Packets\Strings\QueryMate.cs" />
+    <Compile Include="Packets\Strings\StringPacket.cs" />
+    <Compile Include="Packets\Strings\WhisperWindowInfo.cs" />
+    <Compile Include="Packets\SubClass\SubClassPacket.cs" />
+    <Compile Include="Packets\Team\TeamActionPacket.cs" />
+    <Compile Include="Packets\Team\TeamMemberPacket.cs" />
+    <Compile Include="Packets\Tools\PacketTypes.cs" />
+    <Compile Include="Packets\Tools\StringPacker.cs" />
+    <Compile Include="Packets\Trade\Accept.cs" />
+    <Compile Include="Packets\Trade\AddItem.cs" />
+    <Compile Include="Packets\Trade\Close.cs" />
+    <Compile Include="Packets\Trade\SetConquerPoints.cs" />
+    <Compile Include="Packets\Trade\SetMoney.cs" />
+    <Compile Include="Packets\Trade\TimeOut.cs" />
+    <Compile Include="Packets\Trade\TradePacket.cs" />
+    <Compile Include="Packets\Trade\Request.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Threads\ActionThread.cs" />
+    <Compile Include="Threads\ArenaThread.cs" />
+    <Compile Include="Threads\BossThread.cs" />
+    <Compile Include="Threads\BotThread.cs" />
+    <Compile Include="Threads\BroadcastThread.cs" />
+    <Compile Include="Threads\DynamicMapThread.cs" />
+    <Compile Include="Threads\GlobalThreads.cs" />
+    <Compile Include="Threads\MonsterThread.cs" />
+    <Compile Include="Threads\PlayerThread.cs" />
+    <Compile Include="Threads\SystemThreads.cs" />
+    <Compile Include="Threads\WeatherThread.cs" />
+    <Compile Include="Tournaments\ALL_VS_ALL\LastManStanding.cs" />
+    <Compile Include="Tournaments\TournamentBase.cs" />
+    <Compile Include="Tournaments\TournamentCore.cs" />
+    <Compile Include="Tournaments\TournamentInfo.cs" />
+    <Compile Include="Tournaments\TournamentScore.cs" />
+    <Compile Include="Tournaments\TournamentTeam.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database" />
+    <Folder Include="Data\Items" />
+    <Folder Include="Data\Guilds" />
+    <Folder Include="Data\Misc" />
+    <Folder Include="Data\Arena" />
+    <Folder Include="Data\Raids" />
+    <Folder Include="Data\Shop" />
+    <Folder Include="Data\Skills\AdvancedSkills" />
+    <Folder Include="Data\Skills\PetSkills" />
+    <Folder Include="Data\Team" />
+    <Folder Include="Data\Nobility" />
+    <Folder Include="Data\Skills" />
+    <Folder Include="Entities\Bosses" />
+    <Folder Include="Entities\Creatures" />
+    <Folder Include="Entities\BattlePets" />
+    <Folder Include="Entities\AdvancedAI" />
+    <Folder Include="Network" />
+    <Folder Include="Core" />
+    <Folder Include="Enums" />
+    <Folder Include="Maps" />
+    <Folder Include="Entities" />
+    <Folder Include="Data" />
+    <Folder Include="Calculations" />
+    <Folder Include="Tournaments" />
+    <Folder Include="Packets\Guild" />
+    <Folder Include="Packets\Arena" />
+    <Folder Include="Packets\Team" />
+    <Folder Include="Packets\SubClass" />
+    <Folder Include="Packets\Nobility" />
+    <Folder Include="Packets\Strings" />
+    <Folder Include="Threads" />
+    <Folder Include="Packets" />
+    <Folder Include="Packets\Interaction\Battle" />
+    <Folder Include="Packets\Interaction\Battle\Skills" />
+    <Folder Include="Packets\Interaction\Misc" />
+    <Folder Include="Packets\Login" />
+    <Folder Include="Packets\GeneralData" />
+    <Folder Include="Packets\Item" />
+    <Folder Include="Packets\Message" />
+    <Folder Include="Packets\Location" />
+    <Folder Include="Packets\Misc" />
+    <Folder Include="Packets\Interaction" />
+    <Folder Include="Packets\Spells" />
+    <Folder Include="Packets\Trade" />
+    <Folder Include="Packets\Tools" />
+    <Folder Include="Packets\NPC" />
+    <Folder Include="Tournaments\2_TEAM" />
+    <Folder Include="Tournaments\ALL_VS_ALL" />
+    <Folder Include="Tournaments\2_TEAM" />
+    <Folder Include="Tournaments\4_TEAM" />
+    <Folder Include="Tournaments\CLASS" />
+    <Folder Include="Tournaments\RACE" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProjectX_V3_Lib\ProjectX_V3_Lib.csproj">
+      <Project>{0F86A07F-7404-48D6-8C65-03A6B4C2C5E4}</Project>
+      <Name>ProjectX_V3_Lib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
